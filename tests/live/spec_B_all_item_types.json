@@ -1,0 +1,15 @@
+{
+  "title": "Test B all item types",
+  "items": [
+    {"unit": "Test B level 1", "topic": "", "type": "Page", "title": "Test B page at level 1",
+     "description": "This page should sit directly inside **Test B level 1**."},
+    {"unit": "Test B level 1", "topic": "Level 2", "type": "Link", "title": "Test B link at level 2",
+     "url": "https://en.wikipedia.org/wiki/Truss?test=b&level=2"},
+    {"unit": "Test B level 1", "topic": "Level 2 > Level 3", "type": "Discussion", "title": "Test B discussion at level 3",
+     "description": "This discussion should sit inside **Level 3**.\n\nReply with one word."},
+    {"unit": "Test B level 1", "topic": "Level 2 > Level 3", "type": "File", "title": "Test B file at level 3",
+     "file": "Test_B_handout.pdf"},
+    {"unit": "Test B level 1", "topic": "Level 2 > Level 3", "type": "Assignment", "title": "Test B control assignment",
+     "description": "Control item. This type is already verified. It should show 5 points.", "points": 5}
+  ]
+}

@@ -1,0 +1,8 @@
+# test and build scratch output
+tests/out/
+
+# Python and OS clutter
+__pycache__/
+*.pyc
+.DS_Store
+.venv/

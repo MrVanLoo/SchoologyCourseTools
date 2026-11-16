@@ -1,0 +1,21 @@
+{
+  "title": "Test A assignment with rubric table",
+  "items": [
+    {"unit": "Test A", "topic": "", "type": "Assignment", "title": "Test A: Truss analysis",
+     "description": "Solve the truss on the worksheet and show a free body diagram for each joint.\n\n- Label each member T (tension) or C (compression).\n- Check your answer with the sum of forces at one joint.\n\nThe rubric below shows how this is scored.",
+     "points": 20, "due": "Any date", "category": "Any category", "rubric": "Test A rubric"}
+  ],
+  "rubrics": [
+    {"name": "Test A rubric", "criteria": [
+      {"title": "Free body diagrams", "description": "Every joint has a correct diagram.", "levels": [
+        {"points": 8, "description": "All correct"}, {"points": 6, "description": "One error"},
+        {"points": 3, "description": "Several errors"}, {"points": 0, "description": "Missing"}]},
+      {"title": "Member forces", "description": "Forces are solved and labeled T or C.", "levels": [
+        {"points": 6, "description": "All correct"}, {"points": 4, "description": "One error"},
+        {"points": 2, "description": "Several errors"}, {"points": 0, "description": "Missing"}]},
+      {"title": "Check", "description": "Answer is checked at one joint.", "levels": [
+        {"points": 6, "description": "Checked and explained"}, {"points": 4, "description": "Checked"},
+        {"points": 2, "description": "Attempted"}, {"points": 0, "description": "Missing"}]}
+    ]}
+  ]
+}

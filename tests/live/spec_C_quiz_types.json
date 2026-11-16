@@ -1,0 +1,15 @@
+{
+  "title": "Test C quiz types",
+  "items": [
+    {"unit": "Test C", "topic": "", "type": "Quiz", "title": "Test C: five question types"}
+  ],
+  "quizzes": [
+    {"title": "Test C: five question types", "questions": [
+      {"type": "mc", "prompt": "Control 1 (multiple choice). A member being pulled apart is in:", "choices": ["Compression", "Tension", "Torsion"], "correct": [1]},
+      {"type": "mr", "prompt": "Control 2 (select all). Which are SI base units?", "choices": ["meter", "newton", "kilogram", "joule"], "correct": [0, 2]},
+      {"type": "tf", "prompt": "Control 3 (true/false). A truss is made of triangles.", "answers": ["true"]},
+      {"type": "fib", "prompt": "New 1 (short answer). What is the SI unit of force?", "answers": ["newton", "newtons", "N"]},
+      {"type": "essay", "prompt": "New 2 (essay). Explain why triangles are used in truss design."}
+    ]}
+  ]
+}
