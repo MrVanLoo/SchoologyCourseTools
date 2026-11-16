@@ -199,6 +199,12 @@ The complete diff against the handed-over file is in `reference/core-js-changes.
 - `cc_build.js` has two extra flags: `--no-inventory` (skip the cc_inventory step, used by tests and `build_dist.sh`) and `--manifest-id` (tests only).
 - Packaging excludes `.gitkeep`, `.DS_Store` and `__pycache__`. The three empty `.gitkeep` placeholders from the handoff were deleted once the folders had real files.
 
+**Finding common-cartridge (changed from the brief's locator line)**
+
+- The brief's line finds the first `common-cartridge/SKILL.md` under `/mnt/skills`, `~/.claude/skills` or `.claude/skills`. That fails two ways. The Claude desktop app keeps skills synced from a claude.ai account in `~/Library/Application Support/Claude/local-agent-mode-sessions/...`, which it does not search. And Bill's account still has the old analysis-only `common-cartridge`, which the line could pick even though it has no build scripts.
+- All three skills now search for `common-cartridge/scripts/cc_build.js` in those folders, plus the desktop app's. Only the new version can match.
+- Tested on this Mac with a fake home folder holding an old and a new copy (paths with spaces): the search picks the new one. Not tested on claude.ai itself, or on the Windows desktop app, whose folder is not searched.
+
 **Readings of the brief**
 
 - **Assignments**: section 3 heads them "(verified)" but says they are untested at CC 1.2. Everywhere I wrote "verified at 1.1, untested at 1.2", the reading that does not overstate.
@@ -264,7 +270,7 @@ Stated plainly. "Not tested" means exactly that.
 
 ## Output of tests/run_all.sh
 
-Run on 2026-11-12 with `PYTHON` pointing at a Python 3.9.6 venv that has openpyxl 3.1.5, Node 24.21.0 and Chrome 157. 191 checks, all passing.
+Run on 2026-11-16 with `PYTHON` pointing at a Python 3.9.6 venv that has openpyxl 3.1.5, Node 24.21.0 and Chrome 157. 191 checks, all passing.
 
 ```
 
@@ -468,7 +474,7 @@ ok   common-cartridge.skill has exactly one SKILL.md, at the folder root
 ok   common-cartridge: frontmatter has only name, description, compatibility
 ok   common-cartridge: name is kebab-case and equals the folder
 ok   common-cartridge: description is 893 characters (max 1024)
-ok   common-cartridge: SKILL.md is 143 lines
+ok   common-cartridge: SKILL.md is 147 lines
 ok   common-cartridge: no cache or .DS_Store files
 ok   schoology-assignment.skill exists
 ok   schoology-assignment.skill unzips to one folder named schoology-assignment
@@ -476,7 +482,7 @@ ok   schoology-assignment.skill has exactly one SKILL.md, at the folder root
 ok   schoology-assignment: frontmatter has only name, description, compatibility
 ok   schoology-assignment: name is kebab-case and equals the folder
 ok   schoology-assignment: description is 684 characters (max 1024)
-ok   schoology-assignment: SKILL.md is 120 lines
+ok   schoology-assignment: SKILL.md is 124 lines
 ok   schoology-assignment: no cache or .DS_Store files
 ok   schoology-course-review.skill exists
 ok   schoology-course-review.skill unzips to one folder named schoology-course-review
@@ -484,7 +490,7 @@ ok   schoology-course-review.skill has exactly one SKILL.md, at the folder root
 ok   schoology-course-review: frontmatter has only name, description, compatibility
 ok   schoology-course-review: name is kebab-case and equals the folder
 ok   schoology-course-review: description is 781 characters (max 1024)
-ok   schoology-course-review: SKILL.md is 78 lines
+ok   schoology-course-review: SKILL.md is 82 lines
 ok   schoology-course-review: no cache or .DS_Store files
 
 all checks passed

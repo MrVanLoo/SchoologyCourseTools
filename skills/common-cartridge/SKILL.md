@@ -11,8 +11,12 @@ This skill has two halves. **Analyze** reads a cartridge someone exported. **Bui
 All paths below are relative to this skill's folder. Find it with:
 
 ```bash
-CC=$(dirname "$(find /mnt/skills ~/.claude/skills .claude/skills -path '*common-cartridge/SKILL.md' 2>/dev/null | head -1)")
+CC=$(find /mnt/skills "$HOME/.claude/skills" .claude/skills "$HOME/Library/Application Support/Claude/local-agent-mode-sessions" \
+        -path '*common-cartridge/scripts/cc_build.js' 2>/dev/null | head -1)
+CC=${CC%/scripts/cc_build.js}
 ```
+
+The search looks for `scripts/cc_build.js`, not just `SKILL.md`, because an older analysis-only `common-cartridge` may also be installed and has no build scripts. The folders it searches are where claude.ai, Claude Code, and the Claude desktop app (for skills synced from a claude.ai account) keep skills.
 
 ## What this format is
 

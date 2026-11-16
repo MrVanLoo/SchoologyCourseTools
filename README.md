@@ -35,7 +35,15 @@ The checklist lists each of these for the course you built.
 | [`schoology-assignment`](skills/schoology-assignment/SKILL.md) | A Google Doc or Word doc becomes a Schoology assignment with points and a rubric. |
 | [`schoology-course-review`](skills/schoology-course-review/SKILL.md) | An export becomes an outline, audit, syllabus draft, workbook, or diff. |
 
-Packaged copies are in [`dist/`](dist/). Install `common-cartridge` first: the other two use its scripts.
+Packaged copies are in [`dist/`](dist/). Install all three: the other two use `common-cartridge`'s scripts.
+
+**On claude.ai:**
+1. Open Settings, then the Skills section (under Capabilities or Customize, depending on the app version).
+2. If an older `common-cartridge` is listed, delete it.
+3. Upload `common-cartridge.skill`, then the other two `.skill` files.
+4. Code execution must be on for skills to run.
+
+Skills on a claude.ai account also appear in the Claude desktop app.
 
 ## Live import tests
 
